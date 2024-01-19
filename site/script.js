@@ -31,16 +31,11 @@ for(var i = 0; i < 20; i++){
 tl.seek(50);
 
 
-"use strict";
+const counter = document.querySelector(".counter-number");
+async function updateCounter() {
+    let response = await fetch("https://hxtz3b44g5auaj36sj7nuzylu40opdbj.lambda-url.us-east-2.on.aws/");
+    let data = await response.json();
+    counter.innerHTML = ` This page has ${data} Views!`;
+}
 
-$(document).ready(() => {
-    $.post('https://hxtz3b44g5auaj36sj7nuzylu40opdbj.lambda-url.us-east-2.on.aws/')
-    .done(visitor_counter => {
-        $('#loader').hide();
-        $('#visits').text(visitor_counter);
-    })
-    .fail(e => {
-        console.log('Error');
-        console.log(e);
-    });
-});
+updateCounter();
