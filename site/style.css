@@ -200,6 +200,105 @@ p {
   margin-bottom: 1rem;
 }
 
+p1{
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 19px;
+}
+
+p2{
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 25px;
+}
+
+.dark-mode body {
+  background-color: #1a1d20;
+  color: #fff; /* Text color */
+}
+
+/* Navigation background and text color */
+.dark-mode .navbar {
+  background-color: #1a1d20;
+}
+
+.dark-mode .navbar-nav .nav-link {
+  color: #fff;
+}
+
+/* Page content background color */
+.dark-mode .resume-section {
+  background-color: #1a1d20;
+}
+
+/* Section heading text color */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6 {
+  color: #fff;
+}
+
+/* Section text color */
+.dark-mode p,
+.dark-mode .subheading,
+.dark-mode .lead {
+  color: #dcdcdc;
+}
+
+.dark-mode-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #1a1d20;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  
+}
+
+.dark-mode-btn i {
+  margin-top: 3px;
+  
+}
+
+
+/* Container background color */
+.dark-mode .container-fluid {
+  background-color: #1a1d20; /* Adjust as needed */
+}
+
+/* Ensure container spans full width */
+.container-fluid {
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.tag-icons {
+  display: inline-flex; 
+  align-items: center; 
+  margin-bottom: 1px; 
+}
+
+.custom-icon {
+  width: 1em; 
+  height: 1em;
+  fill: gray; 
+  margin-right: 10px; 
+  vertical-align: 0%;
+}
+
+
 abbr[title] {
   -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
@@ -618,6 +717,8 @@ progress {
 
 .list-inline-item {
   display: inline-block;
+  vertical-align: 9%;
+  font-size: 1.5em;
 }
 
 .list-inline-item:not(:last-child) {

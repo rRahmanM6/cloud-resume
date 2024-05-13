@@ -15,6 +15,12 @@ async function updateCounter() {
 }
 updateCounter();
 
+function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle("dark-mode");
+}
+
+
 window.addEventListener('DOMContentLoaded', event => {
     // Activate Bootstrap scrollspy on the main nav element
     const sideNav = document.body.querySelector('#sideNav');

@@ -1,32 +1,17 @@
 import json
 import boto3
-
-dynamodb = boto3.resource('dynamodb', region_name='us-east-2')
-table = dynamodb.Table('rr42-cloud-resume')
-
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table('cloud-resume-table')
 def lambda_handler(event, context):
-    response = table.get_item(
-        Key = {
-            'id':'0'
-        }
-    )
+    response = table.get_item(Key={
+        'id':'1'
+    })
+    views = response['Item']['views']
+    views = views + 1
+    print(views)
+    response = table.put_item(Item={
+        'id':'1',
+        'views':views
+    })
     
-    visit_count = response['Item']['views'] 
-    visit_count = str(int(visit_count) + 1)
-    
-    response = table.put_item(
-        Item = {
-            'id':'0',
-            'views': visit_count
-        }
-    )
-
-    return {
-        'statusCode': 200,
-        'headers': {
-            'Access-Control-Allow-Headers': '*',
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': '*'
-        },
-        'body': json.dumps({'visit_count': visit_count})
-    }
+    return views
